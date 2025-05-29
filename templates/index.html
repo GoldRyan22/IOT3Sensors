@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Monitor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .plot-container {
+            margin: 30px auto;
+            width: 90%;
+            max-width: 1000px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Sensor Temperature Dashboard</h1>
+    <div class="plot-container">
+        <img src="{{ url_for('plot') }}" alt="Temperature Plot">
+    </div>
+    <footer>
+        &copy; {{ year }} IoT Sensor Monitoring App
+    </footer>
+</body>
+</html>

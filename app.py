@@ -2,6 +2,7 @@ from flask import Flask, render_template, send_file
 from io import BytesIO
 import matplotlib.pyplot as plt
 import pyrebase
+from datetime import datetime
 # import pyrebase and use the Firebase-fetching code you already wrote
 config = {
     "apiKey": "AIzaSyA_ikc_5_3gPEmBpm9XCvn2l6vAnbALGoc",
@@ -32,9 +33,9 @@ def fetch_temperatures(sensor_key):
 
 
 # Fetch data
-timestamps1, temps1 = fetch_temperatures("Status1")
-timestamps2, temps2 = fetch_temperatures("Status2")
-timestamps3, temps3 = fetch_temperatures("Status3")
+#timestamps1, temps1 = fetch_temperatures("Status1")
+#timestamps2, temps2 = fetch_temperatures("Status2")
+#timestamps3, temps3 = fetch_temperatures("Status3")
 
 def get_all_data():
     timestamps1, temps1 = fetch_temperatures("Status1")
@@ -42,7 +43,11 @@ def get_all_data():
     timestamps3, temps3 = fetch_temperatures("Status3")
 
     length = min(len(temps1), len(temps2), len(temps3))
-    timestamps = timestamps1[:length]
+    timestamps = list(range(1, length + 1))
+   
+    
+    
+
     temps1 = temps1[:length]
     temps2 = temps2[:length]
     temps3 = temps3[:length]
